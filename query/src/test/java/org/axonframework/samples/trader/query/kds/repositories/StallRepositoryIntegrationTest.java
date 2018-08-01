@@ -1,6 +1,6 @@
 package org.axonframework.samples.trader.query.kds.repositories;
 
-import org.axonframework.samples.trader.api.kds.StallId;
+import org.axonframework.samples.trader.api.kds.stall.StallId;
 import org.axonframework.samples.trader.infra.config.PersistenceInfrastructureConfig;
 import org.axonframework.samples.trader.query.config.HsqlDbConfiguration;
 import org.axonframework.samples.trader.query.kds.StallView;

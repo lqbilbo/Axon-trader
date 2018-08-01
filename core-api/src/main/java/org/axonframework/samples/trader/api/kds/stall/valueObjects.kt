@@ -1,4 +1,4 @@
-package org.axonframework.samples.trader.api.kds
+package org.axonframework.samples.trader.api.kds.stall
 
 import org.axonframework.common.IdentifierFactory
 import java.io.Serializable

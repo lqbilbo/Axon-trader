@@ -15,6 +15,7 @@ public class StallView {
     private String remark;
     private String requirements;
     private int ability;
+    private int seq;
 
     public String getIdentifier() {
         return identifier;
@@ -62,5 +63,13 @@ public class StallView {
 
     public void setAbility(int ability) {
         this.ability = ability;
+    }
+
+    public int getSeq() {
+        return seq;
+    }
+
+    public void setSeq(int seq) {
+        this.seq = seq;
     }
 }

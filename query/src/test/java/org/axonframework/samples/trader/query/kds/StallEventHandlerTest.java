@@ -1,7 +1,7 @@
 package org.axonframework.samples.trader.query.kds;
 
-import org.axonframework.samples.trader.api.kds.StallCreatedEvent;
-import org.axonframework.samples.trader.api.kds.StallId;
+import org.axonframework.samples.trader.api.kds.stall.StallCreatedEvent;
+import org.axonframework.samples.trader.api.kds.stall.StallId;
 import org.axonframework.samples.trader.query.kds.repositories.StallViewRepository;
 import org.junit.Before;
 import org.junit.Test;

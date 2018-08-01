@@ -1,4 +1,4 @@
-package org.axonframework.samples.trader.api.kds
+package org.axonframework.samples.trader.api.kds.stall
 
 abstract class StallEvent(open val stallId: StallId)
 

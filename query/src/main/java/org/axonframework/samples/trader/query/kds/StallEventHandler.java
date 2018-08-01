@@ -2,7 +2,7 @@ package org.axonframework.samples.trader.query.kds;
 
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
-import org.axonframework.samples.trader.api.kds.StallCreatedEvent;
+import org.axonframework.samples.trader.api.kds.stall.StallCreatedEvent;
 import org.axonframework.samples.trader.query.kds.repositories.StallViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
