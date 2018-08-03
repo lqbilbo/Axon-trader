@@ -25,6 +25,9 @@ import org.axonframework.spring.stereotype.Aggregate;
 
 import static org.axonframework.commandhandling.model.AggregateLifecycle.apply;
 
+/**
+ * @author luoqi
+ */
 @Aggregate(repository = "userAggregateRepository")
 public class User {
 

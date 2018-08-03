@@ -16,6 +16,18 @@
 
 package org.axonframework.samples.trader.query.transaction;
 
+/**
+ * @author luoqi
+ */
 public enum TransactionState {
-    STARTED, CONFIRMED, CANCELLED, EXECUTED, PARTIALLY_EXECUTED
+    //开始
+    STARTED,
+    //确认
+    CONFIRMED,
+    //取消
+    CANCELLED,
+    //执行
+    EXECUTED,
+    //部分执行
+    PARTIALLY_EXECUTED
 }

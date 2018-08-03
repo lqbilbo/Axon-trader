@@ -79,10 +79,10 @@ public class HsqlDBInit extends BaseDBInit {
         try {
             Connection connection = dataSource.getConnection();
 
-            sql_dropDomainEventEntryTable(connection).execute();
-            sql_dropSnapshotEventEntryTable(connection).execute();
-            sql_dropTableAssocValueEntry(connection).execute();
-            sql_dropTableSagaEntry(connection).execute();
+            sqlStatementOfDropDomainEventEntryTable(connection).execute();
+            sqlStatementOfDropSnapshotEventEntryTable(connection).execute();
+            sqlStatementOfDropTableAssocValueEntry(connection).execute();
+            sqlStatementOfDropTableSagaEntry(connection).execute();
 
             userViewRepository.deleteAll();
             transactionViewRepository.deleteAll();
@@ -136,19 +136,19 @@ public class HsqlDBInit extends BaseDBInit {
         }
     }
 
-    public PreparedStatement sql_dropSnapshotEventEntryTable(Connection connection) throws SQLException {
+    public PreparedStatement sqlStatementOfDropSnapshotEventEntryTable(Connection connection) throws SQLException {
         return connection.prepareStatement("drop table SNAPSHOTEVENTENTRY if exists;");
     }
 
-    public PreparedStatement sql_dropDomainEventEntryTable(Connection connection) throws SQLException {
+    public PreparedStatement sqlStatementOfDropDomainEventEntryTable(Connection connection) throws SQLException {
         return connection.prepareStatement("drop table DOMAINEVENTENTRY if exists;");
     }
 
-    public PreparedStatement sql_dropTableAssocValueEntry(Connection conn) throws SQLException {
+    public PreparedStatement sqlStatementOfDropTableAssocValueEntry(Connection conn) throws SQLException {
         return conn.prepareStatement("drop table ASSOCIATIONVALUEENTRY if exists;");
     }
 
-    public PreparedStatement sql_dropTableSagaEntry(Connection conn) throws SQLException {
+    public PreparedStatement sqlStatementOfDropTableSagaEntry(Connection conn) throws SQLException {
         return conn.prepareStatement("drop table SAGAENTRY if exists;");
     }
 }

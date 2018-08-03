@@ -27,7 +27,7 @@ public class StallEventHandlerTest {
     }
 
     @Test
-    public void testOnCompanyCreatedEventACompanyViewIsSaved() {
+    public void testOnStallCreatedEventAStallViewIsSaved() {
         StallId expectedStallId = new StallId();
         long expectedPoiId = 2L;
         String expectedStallName = "stallName";

@@ -130,8 +130,9 @@ public abstract class BaseDBInit implements DBInit {
 
     void addMoney(UserId buyer1, long amount) {
         PortfolioView portfolioView = portfolioRepository.findByUserIdentifier(buyer1.toString());
-        if (portfolioView == null)
+        if (portfolioView == null) {
             depositMoneyToPortfolio(buyer1, amount);
+        }
     }
 
     void addItems(UserId user, String companyName, long amount) {

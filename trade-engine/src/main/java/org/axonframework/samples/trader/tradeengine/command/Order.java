@@ -23,6 +23,9 @@ import org.axonframework.samples.trader.api.orders.trades.TradeExecutedEvent;
 import org.axonframework.samples.trader.api.orders.transaction.TransactionId;
 import org.axonframework.samples.trader.api.portfolio.PortfolioId;
 
+/**
+ * @author luoqi
+ */
 public class Order {
 
     @EntityId
@@ -40,6 +43,21 @@ public class Order {
         this.tradeCount = tradeCount;
         this.itemsRemaining = tradeCount;
         this.portfolioId = portfolioId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)  {return true;}
+        if (!(o instanceof Order)) {return false;}
+
+        Order order = (Order) o;
+
+        return getOrderId().equals(order.getOrderId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getOrderId().hashCode();
     }
 
     public long getItemPrice() {

@@ -36,6 +36,9 @@ import org.axonframework.samples.trader.api.orders.trades.SellOrderPlacedEvent;
 import org.axonframework.samples.trader.api.orders.trades.TradeExecutedEvent;
 import org.axonframework.spring.stereotype.Aggregate;
 
+/**
+ * @author luoqi
+ */
 @Aggregate(repository = "companyAggregateRepository")
 public class OrderBook {
 
@@ -129,11 +132,21 @@ public class OrderBook {
     }
 
     private static class OrderComparator implements Comparator<Order> {
-
+        @Override
         public int compare(Order o1, Order o2) {
             long x = o1.getItemPrice();
             long y = o2.getItemPrice();
             return Long.compare(x, y);
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

@@ -4,12 +4,16 @@ import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.samples.trader.api.kds.stall.StallCreatedEvent;
 import org.axonframework.samples.trader.query.kds.repositories.StallViewRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @ProcessingGroup("queryModel")
 public class StallEventHandler {
+
+    private static Logger logger = LoggerFactory.getLogger(StallEventHandler.class);
 
     private final StallViewRepository stallViewRepository;
 
@@ -30,5 +34,7 @@ public class StallEventHandler {
         stallView.setAbility(event.getAbility());
 
         stallViewRepository.save(stallView);
+
+        logger.info("saved success!!!");
     }
 }

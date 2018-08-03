@@ -28,8 +28,6 @@ import org.axonframework.samples.trader.query.users.UserView;
 import org.axonframework.samples.trader.query.users.repositories.UserViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.AuthenticationServiceException;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -39,7 +37,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.concurrent.ExecutionException;
 
 /**
  * A custom spring security authentication provider that only supports {@link org.springframework.security.authentication.UsernamePasswordAuthenticationToken}
@@ -54,7 +51,7 @@ import java.util.concurrent.ExecutionException;
 @Component
 public class TraderAuthenticationProvider implements AuthenticationProvider {
 
-    private final static Collection<GrantedAuthority> userAuthorities;
+    private final static Collection<GrantedAuthority> USER_AUTHORITIES;
 
     @Autowired
     private UserViewRepository userViewRepository;
@@ -63,8 +60,8 @@ public class TraderAuthenticationProvider implements AuthenticationProvider {
     private UserCommandHandler userCommandHandler;
 
     static {
-        userAuthorities = new HashSet<>();
-        userAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+        USER_AUTHORITIES = new HashSet<>();
+        USER_AUTHORITIES.add(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Autowired
@@ -106,7 +103,7 @@ public class TraderAuthenticationProvider implements AuthenticationProvider {
         }*/
 
         UsernamePasswordAuthenticationToken result =
-                new UsernamePasswordAuthenticationToken(account, authentication.getCredentials(), userAuthorities);
+                new UsernamePasswordAuthenticationToken(account, authentication.getCredentials(), USER_AUTHORITIES);
         result.setDetails(authentication.getDetails());
         return result;
     }

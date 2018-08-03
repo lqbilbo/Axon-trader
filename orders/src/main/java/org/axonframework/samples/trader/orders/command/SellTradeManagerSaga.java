@@ -30,7 +30,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Saga
-public class SellTradeManagerSaga extends TradeManagerSaga {
+public class SellTradeManagerSaga extends AbstractTradeManagerSaga {
 
     private static final Logger logger = LoggerFactory.getLogger(SellTradeManagerSaga.class);
 

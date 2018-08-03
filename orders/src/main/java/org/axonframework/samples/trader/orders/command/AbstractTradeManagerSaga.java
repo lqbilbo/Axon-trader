@@ -24,7 +24,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 
-public abstract class TradeManagerSaga implements Serializable {
+/**
+ * @author luoqi
+ */
+public abstract class AbstractTradeManagerSaga implements Serializable {
 
     transient CommandGateway commandGateway;
 
